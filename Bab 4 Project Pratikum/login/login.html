@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Hallo, Selamat Datang</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+            <a href="#" class="sign-up">Sign Up</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <form id="loginForm">
+            <h1>Login</h1>
+
+            <div class="input-box">
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="#">Forgot password</a>
+            </div>
+
+            <button type="submit" class="button">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <div id="snackbar">Login button clicked!</div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (confirm("Apakah ini akun anda?")) {
+                // Jika pengguna menjawab "Ya", maka proses login dilanjutkan
+                var snackbar = document.getElementById("snackbar");
+                snackbar.className = "show";
+
+                setTimeout(function(){
+                    snackbar.className = snackbar.className.replace("show", "");
+                }, 3000);
+            } else {
+                // Jika pengguna menjawab "Tidak", maka proses login tidak dilanjutkan
+                alert("Login tidak dilanjutkan");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
