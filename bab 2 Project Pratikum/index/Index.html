@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Hallo, Selamat Datang</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+            <a href="#" class="sign-up">Sign Up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Kelola Tugas dengan MUDAH</h3>
+            <h1 id="main-heading">Tetap Sehat, Tetap Semangat</h1>
+            <p>Dengan Web ini, Anda bisa mencatat, mengelola, dan menyelesaikan tugas-tugas Anda dengan efisien dikarenakan adanya Checklist Tugas.</p>
+            <a href="#" class="learn-more-btn" id="learn-more">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="hero-image">
+            <img id="hero-img" src="gambar.jpg" alt="Programmer">
+        </div>
+    </section>
+
+    <script>
+        // Mengubah teks dalam elemen <h1>
+        document.getElementById('main-heading').textContent = "Selalu Produktif Setiap Hari";
+
+        // Menambahkan elemen baru ke list navigasi
+        const newNavItem = document.createElement('li');
+        const newLink = document.createElement('a');
+        newLink.href = '#';
+        newLink.textContent = 'Contact';
+        newNavItem.appendChild(newLink);
+        document.querySelector('.nav-links').appendChild(newNavItem);
+
+        // Mengubah atribut src dari gambar
+        document.getElementById('hero-img').setAttribute('src', 'gambar_baru.jpg');
+
+        // Event listener untuk tombol "Pelajari Lebih Lanjut"
+        document.getElementById('learn-more').addEventListener('click', function() {
+            alert('Anda mengklik tombol Pelajari Lebih Lanjut!');
+        });
+    </script>
+</body>
+</html>
